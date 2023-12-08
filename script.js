@@ -4,6 +4,7 @@ var emailerror = document.getElementById('email-error');
 var messageerror = document.getElementById('message-error');
 var submiterror = document.getElementById('submit-error');
 
+
 function validateName(){
     var name =document.getElementById('username').value;
 
@@ -54,17 +55,25 @@ function validateEmail(){
 }
 function validateMessage(){
     var message =document.querySelector('#message').value;
+    var required = 30;
+    var left = required - message.length;
 
-    if(message.length == 0){
-        messageerror.innerHTML ='Type something';
-        return false;
-
-    }
-    if( message.length<=20){
-        messageerror.innerHTML = 'Type atleast 20 charectors';
+    if(left > 0){
+        messageerror.innerHTML =left + 'more characters required'
         return false
     }
+    
     messageerror.innerHTML='<i class="fa-solid fa-check-to-slot"></i>';
     return true;
 
 }
+function validateform(){
+if(!validateName()||!validatePhone()||!validateEmail()||!validateMessage()){
+    submiterror.style.display = 'block';
+    submiterror.innerHTML ='please fix Error to submit';
+    setTimeout(function(){submiterror.style.display = 'none';},3000);
+    return false;
+
+}
+}
+
