@@ -6,14 +6,16 @@
 }
 .container{
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     background: #141a34;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
+input{
+    width: 100%;
+}
 
 
 .container form{
@@ -81,31 +83,37 @@ form button{
 }
 #submit-error{
     color: red;
+    font-size: 14px;
 }
 .input-group span i{
     color: green;
+    font-size: 18px;
 }
 
 
 
 
 
-
-
-
-
-
-
-
-@media(max-width:750px){
-    .input-group span {
-        position: absolute;
-        bottom: 12px;
-        right: 17px;
+@media (max-width:576px){
+    .input-group span{
         font-size: 9px;
-        color: red;
     }
-    .input-group label{
+    .input-group span i{
+        font-size: 14px;
+    }
+    ::placeholder{
+        font-size: 12px;
+    }
+    .input-group input, .input-group textarea{
+        font-size: 14px;
         flex-basis: 100%;
+    }#submit-error{
+        font-size: 9px;
     }
+
 }
+
+
+
+
+
