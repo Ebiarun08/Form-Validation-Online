@@ -13,7 +13,7 @@
 
 <body>
   <div class="container">
-    <form>
+    <form id="form">
       <i class="fas fa-paper-plane"></i>
 
       <div class="input-group">
@@ -40,8 +40,8 @@
         <span id="message-error"></span>
       </div>
 
-      <button>Submit</button>
-      <span id="submit-error"></span>
+      <button onclick="return validateform()">Submit</button>
+      <span id="submit-error" ></span>
 
     </form>
 
